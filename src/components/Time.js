@@ -25,16 +25,16 @@ const Time = () => {
     let minsAndSecs = myDate.substring(myDate.length - 6); // get rest of time
     if (pm.includes(hour)) {
       let newHour = (parseInt(hour, 10) - 12).toString(); // convert base-12 hours
-      let newDate = `${newHour + minsAndSecs} pm`; // make new time
+      let newDate = `${newHour + minsAndSecs} PM`; // make new time
       setTime(newDate); // set new time state
     } else if (myDate.substring(0, 2) === '00') {
-      let newDate = `12${minsAndSecs} am`;
+      let newDate = `12${minsAndSecs} AM`;
       setTime(newDate);
     } else if (myDate.substring(0, 1) === '0') {
-      myDate = `${myDate.substring(1, myDate.length)} am`;
+      myDate = `${myDate.substring(1, myDate.length)} AM`;
       setTime(myDate);
     } else {
-      myDate = `${myDate} am`;
+      myDate = `${myDate} AM`;
       setTime(myDate); // set time state
     }
     setTimeout(getTime, 1000);
